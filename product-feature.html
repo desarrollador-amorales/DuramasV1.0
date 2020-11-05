@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- team27:05-->
+<!-- services27:08-->
 
 <head>
     <meta charset="utf-8">
-    <title>Duramas - Crea tus ambientes | Productos</title>
+    <title>Contra - Interior Creator HTML Template | Services</title>
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style-products.css" rel="stylesheet">
+    <link href="css/style-product-feature.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <!--Color Switcher Mockup-->
     <link href="css/color-switcher-design.css" rel="stylesheet">
@@ -28,20 +28,20 @@
 
 <body>
 
+    <!--initialize AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     <div class="page-wrapper">
         <!-- Preloader -->
         <div class="preloader"></div>
 
-        <!--initialize AOS-->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-
         <!-- Main Header-->
         <header class="main-header header-style-four">
             <div class="header-top">
-                <div class="auto-container-products clearfix">
+                <div class="auto-container clearfix">
                     <div class="top-right">
                         <ul class="contact-info">
                             <li><span>Call Center :</span> (+593) 7-280-8731</li>
@@ -53,7 +53,7 @@
             </div>
 
             <div class="header-lower">
-                <div class="auto-container-products">
+                <div class="auto-container">
                     <div class="main-box clearfix">
                         <div class="logo-box">
                             <div class="logo">
@@ -94,7 +94,7 @@
                                                 <li><a href="service-detail.html">Service Detail</a></li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a href="#">Proyectos</a>
+                                        <li class=dropdown><a href="#">Proyectos</a>
                                             <ul>
                                                 <li><a href="projects.html">Projects</a></li>
                                                 <li><a href="project-detail.html">Project Detail</a></li>
@@ -150,191 +150,194 @@
         <!--End Main Header -->
 
         <!--Page Title-->
-        <section class="page-title" style="background-image:url(images/background/10.jpg);">
-            <div class="auto-container-products">
+        <section class="page-title" style="background-image:url(images/background/sodalite.jpeg);">
+            <div class="auto-container">
                 <div class="inner-container clearfix">
                     <div class="title-box">
-                        <h1>Nuestros Productos</h1>
+                        <h1>Detalle del Producto</h1>
                         <span class="title">The Interior speak for themselves</span>
                     </div>
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html">Inicio</a></li>
-                        <li>Nuestros Productos</li>
+                        <li>Detalle de Producto</li>
                     </ul>
                 </div>
             </div>
         </section>
         <!--End Page Title-->
-
-
-        <!-- Product Section alternate -->
-        <section class="projects-section alternate">
+        <!-- Specialize Section -->
+        <section class="specialize-section-two alternate">
             <div class="auto-container">
-                <!--MixitUp Galery-->
-                <div class="mixitup-gallery">
-                    <!--Filter-->
-                    <div class="filters text-center clearfix">
-                        <ul class="filter-tabs filter-btns clearfix">
-                            <li class="active filter" data-role="button" data-filter="all">TODO</li>
-                            <li class="filter" data-role="button" data-filter=".porcelanato">PORCELANATO</li>
-                            <li class="filter" data-role="button" data-filter=".granito">GRANITO</li>
-                            <li class="filter" data-role="button" data-filter=".travertinos">TRAVERTINOS</li>
-                            <li class="filter" data-role="button" data-filter=".ceramicas">CERAMICAS</li>
-                            <li class="filter" data-role="button" data-filter=".prueba">PRUEBA</li>
-                        </ul>
+                <div class="row">
+                    <!-- Title Column -->
+                    <div class="title-column col-lg-5 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <span class="float-text">Services</span>
+                                <h2>Our Specialization</h2>
+                            </div>
+
+                            <div class="text-box">
+                                <h4>Architectural Design</h4>
+                                <p>Quality over quantity, so the saying goes. With so many concepts floating around the architectural profession, it can be difficult to keep up with all the ideas which you’re expected to know.</p>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.It has survived not only five centuries. When an unknown printer took a galley of type
+                                    and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="link-box">
+                                <a href="#">Read More <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="filter-list row">
-                        <!-- Team Block -->
-                        <div class="team-block all mix porcelanato granito ceramicas col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="flip-up" data-aos-duration="8000">
-                                            <a href="product-feature.html"><img src="images/resource/BLUE AGAT_THUMBNAIL.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">BLUE AGAT</a></h3>
-                                </div>
+                    <!-- Carousel Column -->
+                    <div class="carousel-column col-lg-7 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <div class="carousel-outer">
+                                <ul class="image-carousel owl-carousel owl-theme">
+
+                                    <li>
+                                        <a href="images/resource/special-4.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-4.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-2.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-2.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-3.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-3.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-1.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-1.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-4.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-4.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-2.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-2.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-3.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-3.jpg" alt=""></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="images/resource/special-1.jpg" class="lightbox-image" title="Image Caption Here"><img src="images/resource/special-1.jpg" alt=""></a>
+                                    </li>
+
+                                </ul>
+
+                                <ul class="thumbs-carousel owl-carousel owl-theme">
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-3.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-1.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-2.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-4.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-search"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-3.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-1.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-2.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                    <li class="thumb-box">
+                                        <figure><img src="images/resource/special-thumb-4.jpg" alt=""></figure>
+                                        <div class="overlay"><span class="icon fa fa-arrows-alt"></span></div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <!-- Team Block -->
-                        <div class="team-block all mix granito ceramicas col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="fade-down-left" data-aos-duration="8000">
-                                            <a href="product-feature.html"><img src="images/resource/CLACCIC BLACK.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">CLASSIC BLACK</a></h3>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Specialize Section -->
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="inner-container">
+                <div class="sec-title">
+                    <span class="float-text">informaer</span>
+                    <h2>Contact Us</h2>
+                </div>
+
+                <div class="row">
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <h4>Need Support</h4>
+                            <ul class="contact-info">
+                                <li>Complax interprice company, 882 <br> street Latrobe, PA 15786</li>
+                                <li>+88 169 787 5256 <br>+88 165 358 5678</li>
+                                <li><a href="#">support@contra.com</a></li>
+                            </ul>
                         </div>
+                    </div>
 
-                        <!-- Team Block -->
+                    <!-- Form Column -->
+                    <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <!-- Contact Form -->
+                            <div class="contact-form">
+                                <form method="post" action="#">
+                                    <div class="row">
+                                        <div class="form-group col-lg-6 col-md-12">
+                                            <input type="text" name="username" placeholder="Name" required>
+                                        </div>
 
-                        <div class="team-block all mix ceramicas  col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-in-up">
-                                            <a href="product-feature.html"><img src="images/resource/agglocepp.jpg" alt=""></a>
+                                        <div class="form-group col-lg-6 col-md-12">
+                                            <input type="text" name="phone" placeholder="Phone" required>
+                                        </div>
+
+                                        <div class="form-group col-lg-6 col-md-12">
+                                            <input type="text" name="company" placeholder="Company" required>
+                                        </div>
+
+                                        <div class="form-group col-lg-6 col-md-12">
+                                            <input type="email" name="email" placeholder="Email" required>
+                                        </div>
+
+                                        <div class="form-group col-lg-12 col-md-12">
+                                            <textarea name="message" placeholder="Massage"></textarea>
+                                        </div>
+
+                                        <div class="form-group col-lg-12 col-md-12">
+                                            <button class="theme-btn btn-style-three" type="submit" name="submit-form">Submit</button>
                                         </div>
                                     </div>
-                                    <h3 class="name"><a href="products.html">AGGLOCEPP</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Block -->
-                        <div class="team-block all mix travertinos ceramicas col-lg-4 col-md-6 col-sm-12 ">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-out-up">
-                                            <a href="product-feature.html"><img src="images/resource/amazonite.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">AMAZONITE</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Team Block -->
-
-                        <div class="team-block all mix granito col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-in-up">
-                                            <a href="products.html"><img src="images/resource/amarillo-tarvertino.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="products.html">AMARILLO TRAVERTINO</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Block -->
-                        <div class="team-block all mix travertinos col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-out-up">
-                                            <a href="products.html"><img src="images/resource/test2.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="products.html">PARSEL PERLA</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Block -->
-                        <div class="team-block all mix prueba col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-out-up">
-                                            <a href="products.html"><img src="images/resource/white granite.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="products.html">WHITE GRANITE</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Team Block -->
-
-                        <div class="team-block all mix prueba col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-in-up">
-                                            <a href="product-feature.html"><img src="images/resource/sodalite.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">SOLADITE</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Block -->
-                        <div class="team-block all mix prueba col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-out-up">
-                                            <a href="product-feature.html"><img src="images/resource/black-galaxy.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">BLACK GALAXY</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Block -->
-                        <div class="team-block all mix prueba col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image">
-                                        <div data-aos="zoom-out-up">
-                                            <a href="product-feature.html"><img src="images/resource/cianitus.jpeg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <h3 class="name"><a href="product-feature.html">CIANITUS</a></h3>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--End Team Section -->
+        <!--End Contact Section -->
 
         <!-- Main Footer -->
         <footer class="main-footer " style="background-image: url(images/background/5.jpg); ">
-            <div class="auto-container-products">
+            <div class="auto-container ">
                 <!--Widgets Section-->
-                <div class="widgets-section ">
+                <div class="widgets-section-about-page">
                     <div class="row ">
                         <!--Footer Column-->
                         <div class="footer-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
@@ -406,7 +409,7 @@
 
             <!--Footer Bottom-->
             <div class="footer-bottom ">
-                <div class="auto-container-products">
+                <div class="auto-container ">
                     <div class="inner-container clearfix ">
                         <div class="social-links ">
                             <ul class="social-icon-two ">
@@ -446,6 +449,6 @@
     <script src="js/color-settings.js"></script>
 </body>
 
-<!-- team27:08-->
+<!-- services27:08-->
 
 </html>
