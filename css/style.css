@@ -1041,7 +1041,7 @@ img {
 .header-style-one .header-lower {
     position: relative;
     background-color: rgba(0, 0, 0, 0.80);
-    margin: 0 30px;
+    margin: 0 10px;
     padding: 0 40px;
 }
 
@@ -2555,10 +2555,10 @@ header-style-seven .nav-toggler:hover {
     top: 0;
     height: 100%;
     width: 540px;
-    background-image: url(../images/icons/shape-1.png);
+    /**background-image: url(../images/icons/shape-1.png);**/
     background-repeat: no-repeat;
     background-position: right top;
-    content: "test";
+    content: "";
     z-index: 9;
 }
 
