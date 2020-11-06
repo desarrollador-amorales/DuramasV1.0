@@ -5137,6 +5137,12 @@ header-style-seven .nav-toggler:hover {
     position: relative;
 }
 
+.specialize-section-two .title-column .text-box .table {
+    position: relative;
+    color: #000000;
+    padding-right: 5px;
+}
+
 .specialize-section-two .title-column .text-box h4 {
     position: relative;
     display: block;
@@ -5152,7 +5158,7 @@ header-style-seven .nav-toggler:hover {
     display: block;
     font-size: 14px;
     line-height: 30px;
-    color: #777777;
+    color: #000000;
     font-weight: 400;
     margin-bottom: 30px;
 }
