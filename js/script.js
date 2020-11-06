@@ -440,7 +440,7 @@
                 margin: 20,
                 items: 1,
                 nav: true,
-                navText: ['<span class="fa fa-long-arrow-left"></span> ant', 'prox<span class="fa fa-long-arrow-right"></span>'],
+                navText: ['<span class="fa fa-long-arrow-left"></span> antr', 'prox<span class="fa fa-long-arrow-right"></span>'],
                 dots: false,
                 center: false,
                 autoplay: true,
@@ -467,7 +467,7 @@
                     1024: {
                         items: 4,
                         autoWidth: false
-                    }
+                    },
                 },
             })
 
