@@ -6115,6 +6115,11 @@ header-style-seven .nav-toggler:hover {
     margin-bottom: 30px;
 }
 
+.team-block.mix {
+    display: none;
+    margin-bottom: 30px;
+}
+
 .projects-section.alternate .styled-pagination {
     margin-top: 50px;
 }
