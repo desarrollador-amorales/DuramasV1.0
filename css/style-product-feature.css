@@ -5189,6 +5189,8 @@ header-style-seven .nav-toggler:hover {
 .specialize-section-two .carousel-column .carousel-outer {
     position: relative;
     padding-left: 160px;
+    padding-top: 0px;
+    /** margen de las imagenes detalle de producto **/
 }
 
 .specialize-section-two .thumbs-carousel {

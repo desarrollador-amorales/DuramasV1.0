@@ -437,7 +437,7 @@
         $sync2
             .owlCarousel({
                 loop: false,
-                margin: 20,
+                margin: 30,
                 items: 1,
                 nav: true,
                 navText: ['<span class="fa fa-long-arrow-left"></span> antr', 'prox<span class="fa fa-long-arrow-right"></span>'],
@@ -450,23 +450,23 @@
                 responsive: {
                     0: {
                         items: 2,
-                        autoWidth: false
+                        autoWidth: true
                     },
                     400: {
                         items: 2,
-                        autoWidth: false
+                        autoWidth: true
                     },
                     600: {
                         items: 3,
-                        autoWidth: false
+                        autoWidth: true
                     },
                     800: {
                         items: 4,
-                        autoWidth: false
+                        autoWidth: true
                     },
                     1024: {
                         items: 4,
-                        autoWidth: false
+                        autoWidth: true
                     },
                 },
             })
