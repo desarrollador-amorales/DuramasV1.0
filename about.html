@@ -151,12 +151,28 @@
         </header>
         <!--End Main Header -->
 
-        <!--Page Title Adrian-->
-        <section class="header-video">
-            <div class="overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-              <source src="videos/highway-loop.mp4" type="video/mp4">
+
+        <div id="player-overlay">
+            <video autoplay loop controls>
+              <source src="videos/duramas.mp4"  type="video/mp4">
             </video>
+        </div>
+
+        <!--
+        <div class="header-video">
+            <video autoplay loop controls>
+            <source src="videos/duramas.mp4" type="video/mp4">
+            </video>
+        </div> -->
+
+        <!--
+            Mutear manualmente
+        <div class="mute" onclick="document.getElementById('bgvid').muted = !document.getElementById('bgvid').muted">
+            <a href="#">Sileciar / Activar</a>
+        </div> -->
+
+        <!--Page Title Adrian
+        <section class="header-video">
             <div class="inner-container clearfix">
                 <div class="title-box">
                     <h1></h1>
@@ -170,7 +186,7 @@
                 </ul>
             </div>
         </section>
-        <!--End Page Title-->
+        End Page Title-->
 
         <!-- About Section -->
         <section class="about-section" style="background-image: url(images/background/1.jpg);">
