@@ -153,64 +153,71 @@
         </section>
         <!--End Page Title-->
 
-        <!--Controlar las busquedas por el usuario-->
-        <table class="table table-responsive table-striped">
-            <!--table table-responsive table-bordered-->
-            <thead>
-                <tr>
-                    <th>Busqueda</th>
-                    <th>Enlace</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                <?php 
-                    // print_r($_POST);
-                    if ($_POST){
-                        $fileSearch=($_POST['field-search']);
-                       // echo "Campo a buscar--->".$fileSearch;
-                    }
-                ?>
-               
-               <tr>
-                    <td><?php echo $fileSearch; ?></td>
-                    <td>Rusicvdfvdfvdfvdffda</td>
-                    
-                </tr>
-                <tr>
-                    <td><?php echo $fileSearch; ?></td>
-                    <td>Rusicvdfvdfvdfvdffda</td>
-                    
-                </tr>
-                <tr>
-                    <td>Soladite </td>
-                    <td>Rusia</td>
-                    <td>2.50m 3m</td>
-                    <td>xxxxxxxx</td>
-                </tr>
-                <tr>
-                    <td>Soladite </td>
-                    <td>Rusia</td>
-                    <td>2.50m 3m</td>
-                    <td>xxxxxxxxx</td>
-                </tr>
-                <!--<tr>
-                                            <td>Turquia</td>
-                                            <td>Thomas</td>
-                                            <td>smith@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Merry</td>
-                                            <td>Jim</td>
-                                            <td>merry@example.com</td>
-                                        </tr>-->
-            </tbody>
-        </table>
+        <?php 
+                // print_r($_POST);
+                if ($_POST){
+                    $fileSearch=($_POST['field-search']);
+                    // echo "Campo a buscar--->".$fileSearch;
+                }
+            ?>
 
+<!--Controlar las busquedas por el usuario-->
+
+    <table class="table table-ligth table-striped">
+        <tbody>
+            <tr>
+                <th width="40%" class="text-center">Busqueda</th>
+                <th width="15%" class="text-center">Descripcion</th>
+                <th width="20%" class="text-center">Link</th>
+            </tr>
+
+           <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+
+            <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+
+            <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+
+            <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+
+            <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+            <tr>
+                <td width="40%" class="text-center"><?php echo $fileSearch ?></td>
+                <td width="15%" class="text-center"><?php echo $fileSearch?></td>
+                <td width="20%" class="text-center"><?php echo $fileSearch?></td>
+                
+            <tr>
+
+        </tbody>
+    </table>
 
 
         <!-- Main Footer -->
-        <footer class="main-footer " style="background-image: url(images/background/5.jpg); ">
+        <footer class="main-footer" style="background-image: url(images/background/5.jpg); ">
             <div class="auto-container-products">
                 <!--Widgets Section-->
                 <div class="widgets-section ">
