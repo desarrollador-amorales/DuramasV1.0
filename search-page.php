@@ -1,0 +1,350 @@
+<?php 
+    
+    include 'global/config.php';
+    include 'global/conexion.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- products Adrian Morales-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Duramas - Crea tus ambientes | Productos</title>
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style-search-page.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--Color Switcher Mockup-->
+    <link href="css/color-switcher-design.css" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="css/color-themes/green-theme.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <!--AOS LIBRARY-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!--initialize AOS-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+
+        <!-- Main Header-->
+        <header class="main-header header-style-four">
+            <div class="header-top">
+                <div class="auto-container-products clearfix">
+                    <div class="top-right">
+                        <ul class="contact-info">
+                            <li><span>Call Center :</span> (+593) 7-280-8731</li>
+                            <li><span>Whatsapp :</span> (+593) 939-087-726</li>
+                            <li><span>EMAIL :</span> <a href="#">consultas@duramas.com.ec</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-lower">
+                <div class="auto-container-products">
+                    <div class="main-box clearfix">
+                        <div class="logo-box">
+                            <div class="logo">
+                                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                                    <a href="index.html"><img src="images/logo-2.png" alt="" title=""></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nav-outer">
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md ">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon flaticon-menu-button"></span>
+                                    </button>
+                                </div>
+
+                                <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="index.html">Inicio</a></li>
+                                        <li class="dropdown"><a href="#">La Empresa</a>
+                                            <ul>
+                                                <li><a href="about.html">Sobre Nosotros</a></li>
+                                                <li><a href="faq.html">FAQ's</a></li>
+                                                <li><a href="team.html">Nuestro Equipo</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Servicios</a>
+                                            <ul>
+                                                <li><a href="services.html">All Services</a></li>
+                                                <li><a href="service-detail.html">Commercial Design</a></li>
+                                                <li><a href="service-detail.html">Landescape Design</a></li>
+                                                <li><a href="service-detail.html">Interior Design</a></li>
+                                                <li><a href="service-detail.html">Complete Interior</a></li>
+                                                <li><a href="service-detail.html">House Interior</a></li>
+                                                <li><a href="service-detail.html">Service Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Proyectos</a>
+                                            <ul>
+                                                <li><a href="projects.html">Projects</a></li>
+                                                <li><a href="project-detail.html">Project Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="# ">Productos</a>
+                                            <ul>
+                                                <li><a href="products.html">Productos Opcion 1</a></li>
+                                                <li><a href="products-2.html">Productos Opcion 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Carrito</a>
+                                            <ul>
+                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="shop-single.html">Product Details</a></li>
+                                                <li><a href="shoping-cart.html">Cart Page</a></li>
+                                                <li><a href="checkout.html">Checkout Page</a></li>
+                                                <li><a href="login.html">Registration Page</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contactos</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/background/10.jpg);">
+            <div class="auto-container-products">
+                <div class="inner-container clearfix">
+                    <div class="title-box">
+                        <h1>Resultados encontrados</h1>
+                        <span class="title"></span>
+                    </div>
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li>Resultados</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!--Controlar las busquedas por el usuario-->
+        <table class="table table-responsive table-striped">
+            <!--table table-responsive table-bordered-->
+            <thead>
+                <tr>
+                    <th>Busqueda</th>
+                    <th>Enlace</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <?php 
+                    // print_r($_POST);
+                    if ($_POST){
+                        $fileSearch=($_POST['field-search']);
+                       // echo "Campo a buscar--->".$fileSearch;
+                    }
+                ?>
+               
+               <tr>
+                    <td><?php echo $fileSearch; ?></td>
+                    <td>Rusicvdfvdfvdfvdffda</td>
+                    
+                </tr>
+                <tr>
+                    <td><?php echo $fileSearch; ?></td>
+                    <td>Rusicvdfvdfvdfvdffda</td>
+                    
+                </tr>
+                <tr>
+                    <td>Soladite </td>
+                    <td>Rusia</td>
+                    <td>2.50m 3m</td>
+                    <td>xxxxxxxx</td>
+                </tr>
+                <tr>
+                    <td>Soladite </td>
+                    <td>Rusia</td>
+                    <td>2.50m 3m</td>
+                    <td>xxxxxxxxx</td>
+                </tr>
+                <!--<tr>
+                                            <td>Turquia</td>
+                                            <td>Thomas</td>
+                                            <td>smith@example.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Merry</td>
+                                            <td>Jim</td>
+                                            <td>merry@example.com</td>
+                                        </tr>-->
+            </tbody>
+        </table>
+
+
+
+        <!-- Main Footer -->
+        <footer class="main-footer " style="background-image: url(images/background/5.jpg); ">
+            <div class="auto-container-products">
+                <!--Widgets Section-->
+                <div class="widgets-section ">
+                    <div class="row ">
+                        <!--Footer Column-->
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="footer-widget about-widget ">
+                                <div class="widget-content ">
+                                    <h1 class="widget-title ">CUENCA</h1>
+                                    <strong>SHOWROOM 1:</strong> <br /> Av. Remigio Crespo y Remigio Romero (esq).
+                                    <br /> Telf.: (07) 2883 775 <a
+                                        href="https://www.google.com.ec/maps/place/Duramas+C%C3%ADa+Ltda/@-2.9038772,-79.0153207,17z/data=!3m1!4b1!4m5!3m4!1s0x91cd18735190b837:0x4268154c5a50889c!8m2!3d-2.9038826!4d-79.013132?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                    <div class="widget-content ">
+                                        <strong>SHOWROOM 2 Y BODEGA MATRIZ:</strong> <br /> Av. Cornelio Vintimilla 2-62
+                                        y Paseo Río Machángara. <br /> Telf.: (07) 286 2030 <a
+                                            class="ButtonWidgetFooter "
+                                            href="https://www.google.com.ec/maps/place/Duramas+F%C3%A1brica/@-2.8740566,-78.9790709,17z/data=!3m1!4b1!4m5!3m4!1s0x91cd1782d7a670f7:0x3d35e1fb8e84cc5a!8m2!3d-2.874062!4d-78.9768822?hl=es-419 "
+                                            target="_blank "><span style="font-size:1.2em "> <i class="fa fa-map "
+                                                    aria-hidden="true "></i></span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="footer-widget about-widget ">
+                                <div class="widget-content ">
+                                    <h3 class="widget-title ">QUITO</h3>
+                                    <strong>SHOWROOM 1:</strong> <br /> Av. 6 de diciembre 30-19 y Av. República (esq).
+                                    <br /> Telf.: (02) 252 7166 <a
+                                        href="https://www.google.com.ec/maps/place/DURAMAS+CIA.+LTDA.+Sucursal+Quito/@-0.1967111,-78.4857236,17z/data=!3m1!4b1!4m5!3m4!1s0x91d59a717ed7b4fb:0x3a042c6f9ba44abc!8m2!3d-0.1967165!4d-78.4835349?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                    <strong>SHOWROOM 2 Y BODEGA:</strong> <br /> Av. General Rumiñahui y Latacunga,
+                                    Sangolquí.<br /> Telf.: (02) 601 7000 <a
+                                        href="https://www.google.com.ec/maps/place/DURAMAS+CIA.+LTDA./@-0.3267904,-78.4419826,17z/data=!3m1!4b1!4m5!3m4!1s0x91d5bd04a474b7bb:0xc4cd51586e5a4dd6!8m2!3d-0.3267958!4d-78.4397939?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                    <strong>SHOWROOM 3:</strong> <br /> Av. Oswaldo Guayasamín y Eloy Alfaro,
+                                    Cumbayá.<br /> Telf.: (02) 605 2442 <a
+                                        href="https://www.google.com/maps/place/Duram%C3%A1s+Cumbay%C3%A1/@-0.2034952,-78.4383043,19.33z/data=!4m13!1m7!3m6!1s0x0:0x0!2zMMKwMTInMTIuMSJTIDc4wrAyNicxOC4yIlc!3b1!8m2!3d-0.2033668!4d-78.4383802!3m4!1s0x0:0xf24b834c03594c1!8m2!3d-0.2033311!4d-78.4380685?hl=es "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp ">
+                            <div class="footer-widget about-widget ">
+                                <div class="widget-content ">
+                                    <h3 class="widget-title ">GUAYAQUIL</h3>
+                                    <strong>SHOWROOM 1 Y BODEGA:</strong> <br /> Av. Juan Tanca Marengo km 2 1/2.<br />
+                                    Telf.: (04)292 1335 <a
+                                        href="https://www.google.com.ec/maps/place/Duramas+Cia.+Ltda./@-2.1490272,-79.9020053,18.25z/data=!4m13!1m7!3m6!1s0x0:0x0!2zMsKwMDgnNTkuMCJTIDc5wrA1NCcwMC4yIlc!3b1!8m2!3d-2.149714!4d-79.900058!3m4!1s0x902d6d75c411420f:0xcc01470cbf816a10!8m2!3d-2.1489553!4d-79.9014898?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                    <strong>SHOWROOM 2:</strong> <br /> C.C. Dicentro - Local 35. <br /> Telf.: (04)292
+                                    2203 <a
+                                        href="https://www.google.com.ec/maps/place/2%C2%B009 '01.3%22S+79%C2%B053'55.0%22W/@-2.1503646,-79.9007857,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-2.15037!4d-79.898597?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp ">
+                            <div class="footer-widget about-widget ">
+                                <div class="widget-content ">
+                                    <h3 class="widget-title ">AMBATO</h3>
+                                    <strong>SHOWROOM Y BODEGA:</strong> <br /> Av. Victor Hugo y Arturo Borja<br />
+                                    Telf.: (03) 240 1466 <a
+                                        href="https://www.google.com.ec/maps/place/DURAMAS/@-1.2665512,-78.633265,17z/data=!3m1!4b1!4m5!3m4!1s0x91d3822106942c4d:0xd8073542883bffe5!8m2!3d-1.2665566!4d-78.6310763?hl=es-419 "
+                                        class="ButtonWidgetFooter " target="_blank "><span style="font-size:1.2em "> <i
+                                                class="fa fa-map " aria-hidden="true "></i></span></a></p>
+
+                                </div>
+                            </div>
+                            <div class="footer-widget about-widget">
+                                <hr style="border-top: 1px solid #525252; ">
+                            </div>
+                            <div class="footer-widget about-widget ">
+                                <div class="footer-logo ">
+                                    <figure>
+                                        <a href="index.html "><img src="images/footer-logo.png " alt=" "></a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer Bottom-->
+            <div class="footer-bottom ">
+                <div class="auto-container-products">
+                    <div class="inner-container clearfix ">
+                        <div class="social-links ">
+                            <ul class="social-icon-two ">
+                                <li><a href="https://www.facebook.com/duramas.cialtda "><i
+                                            class="fa fa-facebook "></i></a></li>
+                                <li><a href="# "><i class="fa fa-twitter "></i></a></li>
+                                <li><a href="# "><i class="fa fa-google-plus "></i></a></li>
+                                <li><a href="# "><i class="fa fa-instagram "></i></a></li>
+                                <li><a href="# "><i class="fa fa-whatsapp "></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="copyright-text ">
+                            <a href="# " target="_blank ">Duramas Cia. Ltda.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Main Footer -->
+
+    </div>
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/mixitup.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Color Setting -->
+    <script src="js/color-settings.js"></script>
+</body>
