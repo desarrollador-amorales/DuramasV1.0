@@ -27,10 +27,10 @@
         <div id="my-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Usuarios<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../usuarios/index.php">Usuarios<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Productos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../productos/index.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="category.php">Categorias<span class="sr-only">(current)</span></a>

@@ -41,10 +41,6 @@
                 $error['name']="Escribe el nombre";
             }
 
-            if($txt_paternal_surname==""){
-                $error['paternal_surname']="Escribe el Apellido Paterno";
-            }
-        
             if(count($error)>0){
                 $mostrarModal=true;
             break;

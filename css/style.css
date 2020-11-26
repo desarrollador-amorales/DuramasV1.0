@@ -4310,8 +4310,11 @@ header-style-seven .nav-toggler:hover {
 .about-section {
     position: relative;
     background-repeat: no-repeat;
-    background-position: center left;
-    padding: 100px 0;
+    /**background-position: center;**/
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 0px;
 }
 
 .about-section .image-column {

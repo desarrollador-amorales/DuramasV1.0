@@ -313,3 +313,9 @@ input[type=text]:placeholder {
 #icon {
     width: 60%;
 }
+
+#classModal {}
+
+.modal-body {
+    overflow-x: auto;
+}
