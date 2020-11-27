@@ -1,12 +1,10 @@
 <?php
-$servidor="mysql:dbname=".BD.";host=".SERVIDOR;
-try{
-    $pdo= new PDO($servidor, USUARIO, PASSWORD,
-    array(PDO:: MYSQL_ATTR_INIT_COMMAND=> "SET NAMES utf8"));
-
-    /**echo "<script> alert ('Conectado a BD Tienda....')</script>";**/
-
-} catch(PDOException $e){
-    echo "<script> alert ('Error....')</script>";       
-}
+require_once 'config.php';
+ 
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    /**echo "Connected to $dbname at $host successfully.";**/
+} catch (PDOException $pe) {
+    die("Could not connect to the database $dbname :" . $pe->getMessage());
+    }
 ?>

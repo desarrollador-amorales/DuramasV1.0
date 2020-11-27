@@ -46,29 +46,6 @@ INSERT INTO `empleados` (`id`, `name`, `paternal_surname`, `maternal_surname`, `
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `images`
---
-
-CREATE TABLE `images` (
-  `ID` varchar(255) NOT NULL,
-  `GALLERY` varchar(255) DEFAULT NULL,
-  `IMAGE` longblob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `oxdiscussioncomments`
---
-
-CREATE TABLE `oxdiscussioncomments` (
-  `id` varchar(32) NOT NULL,
-  `comment` longtext DEFAULT NULL,
-  `discussionId` varchar(32) DEFAULT NULL,
-  `time` datetime DEFAULT NULL,
-  `userName` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -302,18 +279,6 @@ INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `yourfirstentity`
---
-
-CREATE TABLE `yourfirstentity` (
-  `id` varchar(32) NOT NULL,
-  `amount` decimal(19,2) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `description` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
 -- Indexes for dumped tables
 --
 
@@ -322,19 +287,6 @@ CREATE TABLE `yourfirstentity` (
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `oxdiscussioncomments`
---
-ALTER TABLE `oxdiscussioncomments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `IDXbhlx4vunn24ym1tbrlgq8g30m` (`discussionId`);
 
 --
 -- Indexes for table `productos`
@@ -367,12 +319,6 @@ ALTER TABLE `tblventa_detalle`
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `yourfirstentity`
---
-ALTER TABLE `yourfirstentity`
   ADD PRIMARY KEY (`id`);
 
 --

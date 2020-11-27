@@ -15,25 +15,21 @@
     include '../../global/conexion.php';
     include '../templates/cabecera.php';
 
-    //variable para almacenar en la base de datos
+    //variable  de productos para almacenar en la base de datos
     $txt_id=(isset($_POST['txt_id']))?$_POST['txt_id']:"";
-    $txt_id_detalle=(isset($_POST['txt_id_detalle']))?$_POST['txt_id_detalle']:"";
     $txt_name=(isset($_POST['txt_name']))?$_POST['txt_name']:"";
     $txt_price=(isset($_POST['txt_price']))?$_POST['txt_price']:"";
     $txt_code=(isset($_POST['txt_code']))?$_POST['txt_code']:"";
     $txt_image=(isset($_FILES["txt_image"]["name"]))?$_FILES["txt_image"]["name"]:""; // para recepcionar tipos de imagenes usar $_FILES 
 
-    
-
-    $accion=(isset($_POST['accion']))?$_POST['accion']:""; // validar si accion tiene valor.
+    $accion=(isset($_POST['accion']))?$_POST['accion']:""; // validar si accion tiene valor en productos
 
     $error=array();
 
     $accionAgregar=""; // manera para habilitar los botones
-    $accionModificar=$accionEliminar=$accionCancelar="disabled"; //manera para desahilitar los botones
+    $accionModificar=$accionEliminar=$accionCancelar=$accionAgregarDetalleHome="disabled"; //manera para desahilitar los botones
     $mostrarModal=false;
-    $mostrarModalDetalle=false;
-    
+       
     switch($accion){
         case 'btnAgregar':
 
@@ -55,9 +51,9 @@
             $sentencia->bindParam(':real_code',$txt_code);
             $sentencia->bindParam(':image',$txt_image);
 
-            $lastIdProduct=$pdo->lastInsertId();
+            //$lastIdProduct=$pdo->lastInsertId();
 
-            echo('Este es el ultimo id de insersion'.$lastIdProduct);
+            //echo('Este es el ultimo id de insersion'.$lastIdProduct);
 
 
             $Fecha=new DateTime(); //obtener la fecha
@@ -73,6 +69,7 @@
 
             $sentencia->bindParam(':image',$nombreArchivo);
             $sentencia->execute();
+
             header('Location: index.php');
 
             echo "Presionaste btnAgregar";
@@ -171,7 +168,7 @@
 
         case 'Seleccionar':
             $accionAgregar="disabled";
-            $accionModificar=$accionEliminar=$accionCancelar="";
+            $accionModificar=$accionEliminar=$accionCancelar=$accionAgregarDetalleHome="";
             $mostrarModal=true;
 
             $sentencia=$pdo->prepare("SELECT * FROM productos WHERE id= :id");
@@ -184,20 +181,6 @@
             $txt_price=$producto['price'];
             $txt_code=$producto['real_code'];
             $txt_image=$producto['image'];
-
-             
-            //aparte en otro mantenimiento
-            $sentencia=$pdo->prepare("SELECT * FROM productos_detalle WHERE id_producto= :id_producto");
-            $sentencia->bindParam(':id_producto',$txt_id);
-            $sentencia->execute();
-
-            $producto=$sentencia->fetch(PDO::FETCH_LAZY);
-
-            $txt_name=$producto['name'];
-            $txt_price=$producto['price'];
-            $txt_code=$producto['real_code'];
-            $txt_image=$producto['image'];
-
         break;
     }
 
