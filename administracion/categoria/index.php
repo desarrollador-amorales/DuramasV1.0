@@ -1,5 +1,5 @@
 <?php 
-    require 'usuarios.php'
+    require 'categoria.php'
 
 ?>
 
@@ -13,7 +13,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Empleado</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Categoría</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -95,7 +95,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Agregar Usuario +
+                Agregar Categoria +
             </button>
             <br/>
             <br/>
@@ -106,20 +106,17 @@
             <table class="table table-hover table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Foto</th>
-                        <th>Nombre Completo</th>
-                        <th>Correo</th>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <!-- Aqui empieza los detalles de los empleados -->
-                <?php foreach($lista_empleados as $empleado) {?>
+                <?php foreach($lista_categoria as $categoria) {?>
                 <tr>
-                    <td><img class="img-thumbnail" width="100px" src="../imagenes/usuarios/<?php echo $empleado['photo'];?>">
-                    </td>
-                    <td><?php echo $empleado['name'];?> <?php echo $empleado['paternal_surname'];?>
-                        <?php echo $empleado['maternal_surname'];?></td>
-                    <td><?php echo $empleado['email'];?></td>
+                    <td><?php echo $categoria['name'];?> <?php echo $empleado['paternal_surname'];?>
+                        <?php echo $categoria['maternal_surname'];?></td>
+                    <td><?php echo $categoria['email'];?></td>
                     <td>
 
                         <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->

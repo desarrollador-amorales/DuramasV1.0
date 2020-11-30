@@ -68,7 +68,7 @@
                             <!-- Tabla de los detalles de producto-->
                             <button type="button" class="btn btn-primary" <?php echo $accionAgregarDetalleHome?>
                                 data-toggle="modal" data-target="#classModal">
-                                Agregar Detalles
+                                Agregar Ambientes +
                             </button>
 
                         </div>
@@ -102,10 +102,10 @@
                                                 id="txt_id_detalle" require="">
 
                                             <!--boton que envia la informacion l otro formulario-->
-                                            <input class="btn btn-info" type="submit" value="Detalle"
-                                                name="accion_detalle_producto">
-                                            <!--<button class="btn btn-info" value="btnSeleccionDetalle" type="submit"
-                                                name="accion_detalle_producto">Seleccionar Detalle</button>-->
+                                            <!--<input class="btn btn-info" type="submit" value="Detalle"
+                                                name="accion_detalle_producto">-->
+                                            <button class="btn btn-info" value="btnSeleccionDetalle" type="submit"
+                                                name="accion_detalle_producto">Seleccionar Detalle</button>
                                             <button class="btn btn-danger" value="btnEliminarDetalle" type="submit"
                                                 name="accion_detalle_producto">Eliminar</button>
 
@@ -149,7 +149,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detalles Productos</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles Ambientes</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         ×
                     </button>
@@ -250,15 +250,15 @@
 
 <!--funcion que servira para mostrar el registro en el modal cuando el usuario la seleccione-->
 <?php if($mostrarModal) {?>
-<script>
-$('#exampleModal').modal('show');
-</script>
+    <script>
+    $('#exampleModal').modal('show');
+    </script>
 <?php }?>
 
 <?php if($mostrarModalDetalle) {?>
-<script>
-$('#classModal').modal('show');
-</script>
+    <script>
+    $('#classModal').modal('show');
+    </script>
 <?php }?>
 
 </div>

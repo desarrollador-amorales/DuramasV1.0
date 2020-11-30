@@ -33,7 +33,7 @@
                     <a class="nav-link" href="../productos/index.php">Productos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="category.php">Categorias<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../categoria/index.php">Categorias<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="category.php">Subcategorias<span class="sr-only">(current)</span></a>

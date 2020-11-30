@@ -101,7 +101,7 @@
 
         break;
 
-        case 'Detalle' :
+        case 'btnSeleccionDetalle' :
             $accionAgregarDetalle="disabled";
             $accionModificarDetalle=$accionEliminarDetalle=$accionCancelarDetalle="";
             $mostrarModalDetalle=true;
@@ -118,23 +118,41 @@
 
         break;
 
+        case 'btnEliminarDetalle':
+           
+           
+            $sentencia=$pdo->prepare("SELECT environment FROM productos_detalle WHERE id= :id_detalle");
+            $sentencia->bindParam(':id_detalle',$txt_id_detalle);
+            $sentencia->execute();
+
+            $detalle_producto=$sentencia->fetch(PDO::FETCH_LAZY);
+
+           if(isset($detalle_producto["environment"])){
+                if(file_exists("../imagenes/productos_detalle/".$detalle_producto["environment"])){
+                    if ($detalle_producto['environment']!="imagen_detalle.png") {
+                        unlink("../imagenes/productos_detalle/".$detalle_producto["environment"]); // borrar imagen fisica consultando desde la base de datos
+                    }
+                }
+            }
+
+           
+            $sentencia=$pdo->prepare("DELETE FROM `productos_detalle` WHERE `id` = :id_detalle");
+            $sentencia->bindParam(':id_detalle',$txt_id_detalle);
+            $sentencia->execute();
+            header('Location: index.php');
+        break;
+        
         case 'btnCancelarDetalle':
             header('Location: index.php');
         break;
+
     }
-    
-    
-    
     
     $sentenciaDetalle=$pdo->prepare("SELECT * FROM productos_detalle where id_producto=:id_producto");
     $sentenciaDetalle->bindParam(':id_producto',$txt_id);
     $sentenciaDetalle->execute();
 
     $lista_productos_detalle= $sentenciaDetalle->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-
     //print_r($lista_empleados);
 
 
