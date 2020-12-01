@@ -49,6 +49,18 @@
                                 <br>
                             </div>
 
+                            <div class="form-group col-md-6">
+                                <label for="">Categoría :</label>
+                                <select class="form-control" name="txt_category">
+                                    <option value="">Seleccione</option>
+                                    <?php foreach($lista_categoria as $categoria) {?>
+                                    <option value="<?php echo $categoria['id'];?>">
+                                        <?php echo $categoria['id'];?> <?php echo $categoria['name_category'];?>
+                                    </option>
+                                    <?php }?>
+                                </select>
+                            </div>
+
                             <div class="form-group col-md-12">
                                 <label for="">Foto:</label>
 
@@ -216,6 +228,8 @@
     <br>
     <div class="input-group"> <span class="input-group-addon"></span>
         <input id="entradafilter" type="text" class="form-control">
+        <br/>
+        <br/>
     </div>
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
@@ -223,6 +237,7 @@
                 <th>Foto</th>
                 <th>Nombre</th>
                 <th>Codigo</th>
+                <th>Categoria</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -230,11 +245,21 @@
         <tbody class="contenidobusqueda">
             <?php foreach($lista_productos as $producto) {?>
             <tr>
+                <?php
+                    $sentencia=$pdo->prepare("SELECT name_category FROM categoria WHERE id= :id");
+                    $sentencia->bindParam(':id',$producto['id_category']);
+                    $sentencia->execute();
+
+                    $category=$sentencia->fetch(PDO::FETCH_LAZY);
+
+                 ?>
+
                 <td><img class="img-thumbnail" width="100px"
                         src="../imagenes/productos/<?php echo $producto['image'];?>">
                 </td>
                 <td><?php echo $producto['name'];?></td>
                 <td><?php echo $producto['real_code'];?></td>
+                <td><?php echo $category['name_category'];?></td>
                 <td>
 
                     <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
@@ -257,33 +282,33 @@
 
 
 <!--funcion que servira para mostrar el registro en el modal cuando el usuario la seleccione-->
-<?php if($mostrarModal) {?>
-<script>
-$('#exampleModal').modal('show');
-</script>
-<?php }?>
+    <?php if($mostrarModal) {?>
+        <script>
+        $('#exampleModal').modal('show');
+        </script>
+    <?php }?>
 
-<?php if($mostrarModalDetalle) {?>
-<script>
-$('#classModal').modal('show');
-</script>
-<?php }?>
+    <?php if($mostrarModalDetalle) {?>
+        <script>
+        $('#classModal').modal('show');
+        </script>
+    <?php }?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
-<script>
-$(document).ready(function() {
-    $('#entradafilter').keyup(function() {
-        var rex = new RegExp($(this).val(), 'i');
-        $('.contenidobusqueda tr').hide();
-        $('.contenidobusqueda tr').filter(function() {
-            return rex.test($(this).text());
-        }).show();
+    <script>
+    $(document).ready(function() {
+        $('#entradafilter').keyup(function() {
+            var rex = new RegExp($(this).val(), 'i');
+            $('.contenidobusqueda tr').hide();
+            $('.contenidobusqueda tr').filter(function() {
+                return rex.test($(this).text());
+            }).show();
 
-    })
+        })
 
-});
-</script>
+    });
+    </script>
 
 </div>
 

@@ -21,6 +21,7 @@
     $txt_price=(isset($_POST['txt_price']))?$_POST['txt_price']:"";
     $txt_code=(isset($_POST['txt_code']))?$_POST['txt_code']:"";
     $txt_image=(isset($_FILES["txt_image"]["name"]))?$_FILES["txt_image"]["name"]:""; // para recepcionar tipos de imagenes usar $_FILES 
+    $txt_category=(isset($_POST['txt_category']))?$_POST['txt_category']:null;
 
     $accion=(isset($_POST['accion']))?$_POST['accion']:""; // validar si accion tiene valor en productos
 
@@ -43,13 +44,18 @@
             }
 
             $sentencia=$pdo->prepare("INSERT INTO productos 
-                            (name, price, real_code, image)
-                             VALUES (:name, :price, :real_code, :image);");
+                            (name, price, real_code, image, id_category)
+                             VALUES (:name, :price, :real_code, :image, :id_category);");
 
             $sentencia->bindParam(':name',$txt_name);
             $sentencia->bindParam(':price',$txt_price);
             $sentencia->bindParam(':real_code',$txt_code);
             $sentencia->bindParam(':image',$txt_image);
+            if ($txt_category == null){
+                $sentencia->bindParam(':id_category',$txt_category,PDO::PARAM_NULL);
+            }else{
+                $sentencia->bindParam(':id_category',$txt_category);
+            }
 
             //$lastIdProduct=$pdo->lastInsertId();
 
@@ -89,15 +95,21 @@
             }
 
             $sentencia=$pdo->prepare(" UPDATE productos SET
-             name =:name,
-             price =:price,
-             real_code =:real_code
-             WHERE id=:id");
+                name =:name,
+                price =:price,
+                real_code =:real_code,
+                id_category =:id_category
+                WHERE id=:id");
 
             $sentencia->bindParam(':name',$txt_name);
             $sentencia->bindParam(':price',$txt_price);
             $sentencia->bindParam(':real_code',$txt_code);
             $sentencia->bindParam(':id',$txt_id);
+            if ($txt_category == null){
+                $sentencia->bindParam(':id_category',$txt_category,PDO::PARAM_NULL);
+            }else{
+                $sentencia->bindParam(':id_category',$txt_category);
+            }
             $sentencia->execute();
 
             
@@ -188,6 +200,11 @@
     $sentencia->execute();
 
     $lista_productos= $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+    $sentenciaCat=$pdo->prepare("SELECT * FROM categoria where id_category_parent is null");
+    $sentenciaCat->execute();
+
+    $lista_categoria= $sentenciaCat->fetchAll(PDO::FETCH_ASSOC);
 
     
 

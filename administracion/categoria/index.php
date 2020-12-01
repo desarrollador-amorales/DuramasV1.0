@@ -97,7 +97,10 @@
         <br>
         <div class="input-group"> <span class="input-group-addon"></span>
             <input id="entradafilter" type="text" class="form-control">
+            <br/>
+            <br/>
         </div>
+      
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -119,7 +122,7 @@
 
                     $parent_category=$sentencia->fetch(PDO::FETCH_LAZY);
 
-                ?>
+                     ?>
 
                     <td><?php echo $categoria['name_category'];?></td>
                     <td><?php echo $categoria['code'];?></td>
@@ -148,9 +151,9 @@
 
     <!--funcion que servira para mostrar el registro en el modal cuando el usuario la seleccione-->
     <?php if($mostrarModal) {?>
-    <script>
-    $('#exampleModal').modal('show');
-    </script>
+        <script>
+        $('#exampleModal').modal('show');
+        </script>
     <?php }?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -170,7 +173,6 @@
     </script>
 
 </div>
-
 
 <?php
 include '../templates/pie-pagina.php';

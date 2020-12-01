@@ -22,6 +22,7 @@
     $txt_code_category=(isset($_POST['txt_code_category']))?$_POST['txt_code_category']:"";
     $txt_description_category=(isset($_POST['txt_description_category']))?$_POST['txt_description_category']:"";
     $txt_parent_category=(isset($_POST['txt_parent_category']))?$_POST['txt_parent_category']:null;
+    $txt_parent_category_text=(isset($_POST['txt_parent_category_text']))?$_POST['txt_parent_category_text']:null;
     // aqui va la variable que se escoge del combobox
 
 
@@ -120,9 +121,16 @@
 
             $categoria=$sentencia->fetch(PDO::FETCH_LAZY);
 
+            $sentencia_cat_padre=$pdo->prepare("SELECT name_category FROM categoria WHERE id= :id");
+            $sentencia_cat_padre->bindParam(':id',$txt_parent_category);
+            $sentencia_cat_padre->execute();
+
+            $categoriaPad=$sentencia_cat_padre->fetch(PDO::FETCH_LAZY);
+
             $txt_name_category=$categoria['name_category'];
             $txt_code_category=$categoria['code'];
             $txt_description_category=$categoria['description'];
+            $txt_parent_category_text=$categoriaPad['name_category'];
             
 
         break;
@@ -132,8 +140,6 @@
     $sentencia->execute();
 
     $lista_categoria= $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-    //print_r($lista_empleados);
 
 ?>
 
