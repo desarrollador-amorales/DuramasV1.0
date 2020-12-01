@@ -36,7 +36,7 @@
                     <a class="nav-link" href="../categoria/index.php">Categorias<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="category.php">Proyectos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../proyectos/index.php">Proyectos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="../../administracion">Salir<span class="sr-only">(current)</span></a>
