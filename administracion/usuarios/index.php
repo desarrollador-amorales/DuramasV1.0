@@ -20,13 +20,14 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
-                                <input type="hidden" required name="txt_id" value="<?php echo $txt_id?>" placeholder=""
+                                <input type="hidden" required name="txt_id" value="<?php echo $txt_id?>" placeholder="" 
                                     id="txt_id" require="">
 
                                 <div class="form-group col-md-4">
                                     <label for="">Nombre:</label>
                                     <input class="form-control <?php echo (isset($error['name']))?"is-invalid":"";?>" type="text" name="txt_name" 
                                         value="<?php echo $txt_name?>" placeholder="" id="txt_name" require="">
+                                        <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^ para mostrar la informacion que nosotros enviamos a traves del formulario y no se pierda-->
                                         <div class ="invalid-feedback">
                                             <?php echo (isset($error['name']))?$error['name']:"";?>
                                         </div>

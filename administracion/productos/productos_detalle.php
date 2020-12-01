@@ -119,8 +119,6 @@
         break;
 
         case 'btnEliminarDetalle':
-           
-           
             $sentencia=$pdo->prepare("SELECT environment FROM productos_detalle WHERE id= :id_detalle");
             $sentencia->bindParam(':id_detalle',$txt_id_detalle);
             $sentencia->execute();

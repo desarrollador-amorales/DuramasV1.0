@@ -37,7 +37,10 @@
     $list_users= $request_user->fetch(PDO::FETCH_LAZY);
 
     if($list_users){
-        header('Location: usuarios/index.php');
+        echo "<script>location.href='usuarios/index.php';</script>";
+        //header('Location: usuarios/index.php');
+        //echo "<script>location.href='http://duramas.com.ec/test/administracion/usuarios/';</script>";
+        die();
     }else{
         
         include("index.php");

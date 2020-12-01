@@ -94,7 +94,7 @@
                                     <td><?php echo $producto_detalle['name'];?></td>
                                     <td>
 
-                                        <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
+                                        <!--este formulario envia la informacion al formulario que esta en la parte de abajo-->
                                         <form action="" method="post">
 
                                             <input type="hidden" required name="txt_id_detalle"
@@ -212,6 +212,11 @@
 
 
 <div class="row">
+    <label for="">Filtro :</label>
+    <br>
+    <div class="input-group"> <span class="input-group-addon"></span>
+        <input id="entradafilter" type="text" class="form-control">
+    </div>
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
@@ -222,27 +227,30 @@
             </tr>
         </thead>
         <!-- Aqui empieza los productos -->
-        <?php foreach($lista_productos as $producto) {?>
-        <tr>
-            <td><img class="img-thumbnail" width="100px" src="../imagenes/productos/<?php echo $producto['image'];?>">
-            </td>
-            <td><?php echo $producto['name'];?></td>
-            <td><?php echo $producto['real_code'];?></td>
-            <td>
+        <tbody class="contenidobusqueda">
+            <?php foreach($lista_productos as $producto) {?>
+            <tr>
+                <td><img class="img-thumbnail" width="100px"
+                        src="../imagenes/productos/<?php echo $producto['image'];?>">
+                </td>
+                <td><?php echo $producto['name'];?></td>
+                <td><?php echo $producto['real_code'];?></td>
+                <td>
 
-                <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
-                <form action="" method="post">
+                    <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
+                    <form action="" method="post">
 
-                    <input type="hidden" name="txt_id" value="<?php echo $producto['id']?>">
+                        <input type="hidden" name="txt_id" value="<?php echo $producto['id']?>">
 
-                    <input class="btn btn-info" type="submit" value="Seleccionar" name="accion">
-                    <!--boton que envia la informacion l otro formulario-->
-                    <button class="btn btn-danger" value="btnEliminar" type="submit" name="accion">Eliminar</button>
+                        <input class="btn btn-info" type="submit" value="Seleccionar" name="accion">
+                        <!--boton que envia la informacion l otro formulario-->
+                        <button class="btn btn-danger" value="btnEliminar" type="submit" name="accion">Eliminar</button>
 
-                </form>
-            </td>
-        </tr>
-        <?php }?>
+                    </form>
+                </td>
+            </tr>
+            <?php }?>
+        </tbody>
     </table>
 
 </div>
@@ -250,16 +258,32 @@
 
 <!--funcion que servira para mostrar el registro en el modal cuando el usuario la seleccione-->
 <?php if($mostrarModal) {?>
-    <script>
-    $('#exampleModal').modal('show');
-    </script>
+<script>
+$('#exampleModal').modal('show');
+</script>
 <?php }?>
 
 <?php if($mostrarModalDetalle) {?>
-    <script>
-    $('#classModal').modal('show');
-    </script>
+<script>
+$('#classModal').modal('show');
+</script>
 <?php }?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#entradafilter').keyup(function() {
+        var rex = new RegExp($(this).val(), 'i');
+        $('.contenidobusqueda tr').hide();
+        $('.contenidobusqueda tr').filter(function() {
+            return rex.test($(this).text());
+        }).show();
+
+    })
+
+});
+</script>
 
 </div>
 

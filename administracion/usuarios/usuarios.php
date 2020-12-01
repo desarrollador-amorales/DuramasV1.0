@@ -18,7 +18,7 @@
     //print_r($_POST); 
 
     //variable para almacenar en la base de datos
-    $txt_id=(isset($_POST['txt_id']))?$_POST['txt_id']:"";
+    $txt_id=(isset($_POST['txt_id']))?$_POST['txt_id']:""; 
     $txt_name=(isset($_POST['txt_name']))?$_POST['txt_name']:"";
     $txt_paternal_surname=(isset($_POST['txt_paternal_surname']))?$_POST['txt_paternal_surname']:"";
     $txt_maternal_surname=(isset($_POST['txt_maternal_surname']))?$_POST['txt_maternal_surname']:"";
@@ -34,7 +34,7 @@
     $accionModificar=$accionEliminar=$accionCancelar="disabled"; //manera para desahilitar los botones
     $mostrarModal=false;
     
-    switch($accion){
+    switch($accion){ // evalua las acciones que envia el formulario al presionar los botones del mismo..
         case 'btnAgregar':
 
             if($txt_name==""){
