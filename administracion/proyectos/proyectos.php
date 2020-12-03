@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Proyectos</title>
     <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
 
 </head>
@@ -17,11 +17,9 @@
 
     //variable  de productos para almacenar en la base de datos
     $txt_id=(isset($_POST['txt_id']))?$_POST['txt_id']:"";
-    $txt_name=(isset($_POST['txt_name']))?$_POST['txt_name']:"";
-    $txt_price=(isset($_POST['txt_price']))?$_POST['txt_price']:"";
-    $txt_code=(isset($_POST['txt_code']))?$_POST['txt_code']:"";
+    $txt_name_proyect=(isset($_POST['txt_name_proyect']))?$_POST['txt_name_proyect']:"";
+    $txt_description_proyect=(isset($_POST['txt_description_proyect']))?$_POST['txt_description_proyect']:"";
     $txt_image=(isset($_FILES["txt_image"]["name"]))?$_FILES["txt_image"]["name"]:""; // para recepcionar tipos de imagenes usar $_FILES 
-    $txt_category=(isset($_POST['txt_category']))?$_POST['txt_category']:null;
 
     $accion=(isset($_POST['accion']))?$_POST['accion']:""; // validar si accion tiene valor en productos
 
@@ -34,7 +32,7 @@
     switch($accion){
         case 'btnAgregar':
 
-            if($txt_name==""){
+            if($txt_name_proyect==""){
                 $error['name']="Escribe el nombre";
             }
         
@@ -43,34 +41,23 @@
             break;
             }
 
-            $sentencia=$pdo->prepare("INSERT INTO productos 
-                            (name, price, real_code, image, id_category)
-                             VALUES (:name, :price, :real_code, :image, :id_category);");
+            $sentencia=$pdo->prepare("INSERT INTO proyecto 
+                            (name, description, imagen)
+                             VALUES (:name, :description, :image);");
 
-            $sentencia->bindParam(':name',$txt_name);
-            $sentencia->bindParam(':price',$txt_price);
-            $sentencia->bindParam(':real_code',$txt_code);
-            $sentencia->bindParam(':image',$txt_image);
-            if ($txt_category == null){
-                $sentencia->bindParam(':id_category',$txt_category,PDO::PARAM_NULL);
-            }else{
-                $sentencia->bindParam(':id_category',$txt_category);
-            }
-
-            //$lastIdProduct=$pdo->lastInsertId();
-
-            //echo('Este es el ultimo id de insersion'.$lastIdProduct);
-
+            $sentencia->bindParam(':name',$txt_name_proyect);
+            $sentencia->bindParam(':description',$txt_description_proyect);
+            
 
             $Fecha=new DateTime(); //obtener la fecha
-            $nombreArchivo=($txt_image!="")?$Fecha->getTimestamp()."_".$_FILES["txt_image"]["name"]:"product.png"; //obtener y validar el nombre de la fotografía asignar un tiempo en el que el usuario sube la foto para que no exista un  nombre igual
+            $nombreArchivo=($txt_image!="")?$Fecha->getTimestamp()."_".$_FILES["txt_image"]["name"]:"building-project.png"; //obtener y validar el nombre de la fotografía asignar un tiempo en el que el usuario sube la foto para que no exista un  nombre igual
 
             error_reporting(error_reporting() & ~E_NOTICE);
             
             $tmpPhoto=$_FILES["txt_image"]["tmp_name"]; //Recolectar la fotografia que php me devuelve de acuerdo al formulario
 
                 if($tmpPhoto!=""){
-                    move_uploaded_file($tmpPhoto,"../imagenes/productos/".$nombreArchivo); // mover la imagen al servidor en alguna carpeta en especifica
+                    move_uploaded_file($tmpPhoto,"../imagenes/proyectos/".$nombreArchivo); // mover la imagen al servidor en alguna carpeta en especifica
                 }
 
             $sentencia->bindParam(':image',$nombreArchivo);
@@ -84,7 +71,7 @@
         case 'btnModificar':
 
             
-            if($txt_name==""){
+            if($txt_name_proyect==""){
                 $error['name']="Escribe el nombre";
             }
 
@@ -94,47 +81,39 @@
             break;
             }
 
-            $sentencia=$pdo->prepare(" UPDATE productos SET
+            $sentencia=$pdo->prepare(" UPDATE proyecto SET
                 name =:name,
-                price =:price,
-                real_code =:real_code,
-                id_category =:id_category
+                description =:description
                 WHERE id=:id");
 
-            $sentencia->bindParam(':name',$txt_name);
-            $sentencia->bindParam(':price',$txt_price);
-            $sentencia->bindParam(':real_code',$txt_code);
+            $sentencia->bindParam(':name',$txt_name_proyect);
+            $sentencia->bindParam(':description',$txt_description_proyect);
             $sentencia->bindParam(':id',$txt_id);
-            if ($txt_category == null){
-                $sentencia->bindParam(':id_category',$txt_category,PDO::PARAM_NULL);
-            }else{
-                $sentencia->bindParam(':id_category',$txt_category);
-            }
             $sentencia->execute();
 
             
 
             $Fecha=new DateTime(); //obtener la fecha
-            $nombreArchivoModificado=($txt_image!="")?$Fecha->getTimestamp()."_".$_FILES["txt_image"]["name"]:"product.png";
+            $nombreArchivoModificado=($txt_image!="")?$Fecha->getTimestamp()."_".$_FILES["txt_image"]["name"]:"building-project.png";
 
             $tmpPhoto=$_FILES["txt_image"]["tmp_name"]; //Recoletar la fotografia que php me devuelve de acuerdo al formulario
 
                 if($tmpPhoto!=""){ //Existe un archivo temporal que el usuario selecciono?
                     
                     // mover la imagen al servidor en alguna carpeta en especifica
-                    move_uploaded_file($tmpPhoto,"../imagenes/productos/".$nombreArchivoModificado); 
+                    move_uploaded_file($tmpPhoto,"../imagenes/proyectos/".$nombreArchivoModificado); 
 
                     // se eliminar la fotografía anterior
-                    $sentencia=$pdo->prepare("SELECT image FROM productos WHERE id= :id");
+                    $sentencia=$pdo->prepare("SELECT imagen FROM proyectos WHERE id= :id");
                     $sentencia->bindParam(':id',$txt_id);
                     $sentencia->execute();
         
-                    $producto=$sentencia->fetch(PDO::FETCH_LAZY);
+                    $proyecto=$sentencia->fetch(PDO::FETCH_LAZY);
         
-                   if(isset($producto["image"])){
-                        if(file_exists("../imagenes/productos/".$producto["image"])){
-                            if($producto['image']!="product.png"){
-                                unlink("../imagenes/productos/".$producto["image"]); // borrar imagen fisica consultando desde la base de datos
+                   if(isset($proyecto["imagen"])){
+                        if(file_exists("../imagenes/proyectos/".$proyecto["imagen"])){
+                            if($proyecto['imagen']!="building-project.png"){
+                                unlink("../imagenes/proyectos/".$proyecto["imagen"]); // borrar imagen fisica consultando desde la base de datos
                             }
                         }
                     }
@@ -153,21 +132,21 @@
 
         case 'btnEliminar':
            
-            $sentencia=$pdo->prepare("SELECT image FROM productos WHERE id= :id");
+            $sentencia=$pdo->prepare("SELECT imagen FROM proyecto WHERE id= :id");
             $sentencia->bindParam(':id',$txt_id);
             $sentencia->execute();
 
-            $producto=$sentencia->fetch(PDO::FETCH_LAZY);
+            $proyecto=$sentencia->fetch(PDO::FETCH_LAZY);
 
-           if(isset($producto["image"])){
-                if(file_exists("../imagenes/productos/".$producto["image"])){
-                    if ($producto['image']!="product.png") {
-                        unlink("../imagenes/productos/".$producto["image"]); // borrar imagen fisica consultando desde la base de datos
+           if(isset($proyecto["imagen"])){
+                if(file_exists("../imagenes/proyectos/".$proyecto["imagen"])){
+                    if ($proyecto['imagen']!="building-pro.png") {
+                        unlink("../imagenes/proyectos/".$proyecto["imagen"]); // borrar imagen fisica consultando desde la base de datos
                     }
                 }
             }
 
-            $sentencia=$pdo->prepare("DELETE FROM `productos` WHERE `id` = :id");
+            $sentencia=$pdo->prepare("DELETE FROM `proyecto` WHERE `id` = :id");
             $sentencia->bindParam(':id',$txt_id);
             $sentencia->execute();
             header('Location: index.php');
@@ -182,30 +161,22 @@
             $accionModificar=$accionEliminar=$accionCancelar=$accionAgregarDetalleHome="";
             $mostrarModal=true;
 
-            $sentencia=$pdo->prepare("SELECT * FROM productos WHERE id= :id");
+            $sentencia=$pdo->prepare("SELECT * FROM proyecto WHERE id= :id");
             $sentencia->bindParam(':id',$txt_id);
             $sentencia->execute();
 
-            $producto=$sentencia->fetch(PDO::FETCH_LAZY);
+            $proyecto=$sentencia->fetch(PDO::FETCH_LAZY);
 
-            $txt_name=$producto['name'];
-            $txt_price=$producto['price'];
-            $txt_code=$producto['real_code'];
-            $txt_image=$producto['image'];
+            $txt_name_proyect=$proyecto['name'];
+            $txt_description_proyect=$proyecto['description'];
+            $txt_image=$proyecto['imagen'];
         break;
     }
 
-    $sentencia=$pdo->prepare("SELECT * FROM productos");
+    $sentencia=$pdo->prepare("SELECT * FROM proyecto");
     $sentencia->execute();
 
-    $lista_productos= $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-    $sentenciaCat=$pdo->prepare("SELECT * FROM categoria where id_category_parent is null");
-    $sentenciaCat->execute();
-
-    $lista_categoria= $sentenciaCat->fetchAll(PDO::FETCH_ASSOC);
-
-    
+    $lista_proyectos= $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 

@@ -25,49 +25,30 @@
                                 id="txt_id" require="">
 
                             <div class="form-group col-md-12">
-                                <label for="">Nombre:</label>
+                                <label for="">Nombre Proyecto:</label>
                                 <input class="form-control <?php echo (isset($error['name']))?"is-invalid":"";?>"
-                                    type="text" name="txt_name" value="<?php echo $txt_name?>" placeholder=""
-                                    id="txt_name" require="">
+                                    type="text" name="txt_name_proyect" value="<?php echo $txt_name_proyect?>" placeholder=""
+                                    id="txt_name_proyect" require="">
                                 <div class="invalid-feedback">
                                     <?php echo (isset($error['name']))?$error['name']:"";?>
                                 </div>
                                 <br>
                             </div>
 
-                            <div class="form-group col-md-6">
-                                <label for="">Precio:</label>
-                                <input class="form-control" type="text" name="txt_price" value="<?php echo $txt_price?>"
-                                    placeholder="" required id="txt_price" require="">
+                            <div class="form-group col-md-12">
+                                <label for="">Descripcion:</label>
+                                <input class="form-control" type="text" name="txt_description_proyect" value="<?php echo $txt_description_proyect?>"
+                                    placeholder="" required id="txt_description_proyect" require="">
                                 <br>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="">Codigo:</label>
-                                <input class="form-control" type="text" name="txt_code" required
-                                    value="<?php echo $txt_code?>" placeholder="" id="txt_code" require="">
-                                <br>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="">Categoría :</label>
-                                <select class="form-control" name="txt_category">
-                                    <option value="">Seleccione</option>
-                                    <?php foreach($lista_categoria as $categoria) {?>
-                                    <option value="<?php echo $categoria['id'];?>">
-                                        <?php echo $categoria['id'];?> <?php echo $categoria['name_category'];?>
-                                    </option>
-                                    <?php }?>
-                                </select>
                             </div>
 
                             <div class="form-group col-md-12">
-                                <label for="">Foto:</label>
+                                <label for="">Imagen:</label>
 
                                 <?php if($txt_image!="") {?>
                                 <br />
                                 <img class="img-thumbnail rounded mx-auto d-block" width="100px"
-                                    src="../imagenes/productos/<?php echo $txt_image;?>">
+                                    src="../imagenes/proyectos/<?php echo $txt_image;?>">
                                 <br />
                                 <br />
                                 <?php }?>
@@ -234,38 +215,29 @@
     <table class="table table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
-                <th>Foto</th>
+                <th>Imagen</th>
                 <th>Nombre</th>
-                <th>Codigo</th>
-                <th>Categoria</th>
+                <th>Descripcion</th>
                 <th>Acciones</th>
             </tr>
         </thead>
-        <!-- Aqui empieza los productos -->
+        <!-- Aqui empieza los proyectos -->
         <tbody class="contenidobusqueda">
-            <?php foreach($lista_productos as $producto) {?>
+            <?php foreach($lista_proyectos as $proyecto) {?>
             <tr>
-                <?php
-                    $sentencia=$pdo->prepare("SELECT name_category FROM categoria WHERE id= :id");
-                    $sentencia->bindParam(':id',$producto['id_category']);
-                    $sentencia->execute();
-
-                    $category=$sentencia->fetch(PDO::FETCH_LAZY);
-
-                 ?>
 
                 <td><img class="img-thumbnail" width="100px"
-                        src="../imagenes/productos/<?php echo $producto['image'];?>">
+                        src="../imagenes/proyectos/<?php echo $proyecto['imagen'];?>">
                 </td>
-                <td><?php echo $producto['name'];?></td>
-                <td><?php echo $producto['real_code'];?></td>
-                <td><?php echo $category['name_category'];?></td>
+                <td><?php echo $proyecto['name'];?></td>
+                <td><?php echo $proyecto['description'];?></td>
+                
                 <td>
 
                     <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
                     <form action="" method="post">
 
-                        <input type="hidden" name="txt_id" value="<?php echo $producto['id']?>">
+                        <input type="hidden" name="txt_id" value="<?php echo $proyecto['id']?>">
 
                         <input class="btn btn-info" type="submit" value="Seleccionar" name="accion">
                         <!--boton que envia la informacion l otro formulario-->
