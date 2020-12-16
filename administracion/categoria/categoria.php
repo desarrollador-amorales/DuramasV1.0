@@ -53,6 +53,7 @@
             $sentencia->bindParam(':name_category',$txt_name_category);
             $sentencia->bindParam(':code',$txt_code_category);
             $sentencia->bindParam(':description',$txt_description_category);
+            
             if ($txt_parent_category == null){
                 $sentencia->bindParam(':id_category_parent',$txt_parent_category,PDO::PARAM_NULL);
             }else{
