@@ -127,7 +127,7 @@
                     <td><?php echo $categoria['name_category'];?></td>
                     <td><?php echo $categoria['code'];?></td>
                     <td><?php echo $categoria['description'];?></td>
-                    <td><?php echo $parent_category['name_category'];?></td>
+                    <td><?php echo $parent_category['name_category'];?></td> <!--Categoria Padre-->
                     <td>
 
                         <!--este formulario envia la informacion al formulario que esta en la parte de arriba-->
