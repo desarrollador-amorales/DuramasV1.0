@@ -101,8 +101,6 @@
                                                 name="accion_detalle_producto">Seleccionar Detalle</button>
                                             <button class="btn btn-danger" value="btnEliminarDetalle" type="submit"
                                                 name="accion_detalle_producto">Eliminar</button>
-
-
                                         </form>
                                     </td>
                                 </tr>
