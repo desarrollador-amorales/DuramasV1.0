@@ -282,7 +282,6 @@
 
 </div>
 
-
 <?php
 include '../templates/pie-pagina.php';
 ?>
