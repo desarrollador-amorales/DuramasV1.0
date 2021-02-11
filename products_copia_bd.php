@@ -199,7 +199,7 @@ include 'global/conexion.php';
 
                     <div class="filter-list row">
 
-                        <!--prueba desde la base de Datos-->
+                        <!--prueba desde la base de Datos Select a la tabla tblproductos -->
 
                         <?php
                         $sentencia=$pdo-> prepare("SELECT * FROM tblproductos");
